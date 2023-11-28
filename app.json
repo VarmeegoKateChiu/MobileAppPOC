@@ -1,0 +1,12 @@
+{
+  "name": "reactMobileAppDemo",
+  "displayName": "reactMobileAppDemo",
+  "expo": {
+    "ios": {
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    }
+  }
+}
+
