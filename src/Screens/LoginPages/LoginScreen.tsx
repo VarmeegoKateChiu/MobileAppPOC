@@ -10,6 +10,7 @@ import fetchPostMobileAutoLogin from "../../Api/ManningsApi/fetchPostMobileAutoL
 interface LoginApiJson {
     sessionId: string;
     password: string;
+    loginStatus: string;
 }
 
 async function save(key: string, value: string) {
@@ -30,9 +31,7 @@ async function getValueFor(key: string) {
 const LoginScreen: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loginSuccess, setLoginSuccess] = useState<boolean | undefined>(undefined);
     const navigation = useNavigation();
-    const [isInputEmpty, setIsInputEmpty] = useState(false);
     const [loginStatus, setLoginStatus] = useState('');
     const ENCRYPTEDPASSWORD = 'encryptedPassword';
     const USERNAME = 'username';
@@ -60,20 +59,18 @@ const LoginScreen: React.FC = () => {
             console.log("get localStoredPasswordString: " + localStoredPasswordString);
             //do auto login
             fetchGetMainSiteApi();
-            const respJsonString: string = await fetchPostMobileLoginApi(localStoredUsernameString, localStoredPasswordString);
-            let sessionId: string = '';
-            if (respJsonString != null) {
-                const jsonObject: LoginApiJson = JSON.parse(respJsonString);
-                sessionId = jsonObject.sessionId;
-            } else {
-                console.log("respJsonString is null");
-            }
-            console.log("sessionId from LoginScreen: " + sessionId);
-            if (sessionId.trim().length !== 0) {
+            const respJson: LoginApiJson = await fetchPostMobileLoginApi(localStoredUsernameString, localStoredPasswordString);
+            console.log("sessionId: "+ respJson.sessionId);
+            console.log("loginStatus: "+ respJson.loginStatus);
+            let sessionId = respJson.sessionId;
+            let loginStatus = respJson.loginStatus;
+
+            if (sessionId.trim().length !== 0 && loginStatus === 'success') {
                 navigation.navigate('MainScreen' as never);
             } else {
                 // Handle login error
-                //nothing handle, cuz will show login fail if loginSusses is false
+                // nothing handle, stay at loginPage to let user login again
+                // very few change to happen since user use this password login success before
             }
         } else {
             console.log("localStoredPasswordString is empty and no need auto login");
@@ -91,30 +88,25 @@ const LoginScreen: React.FC = () => {
             console.log("do login");
             // Simulate login success
             fetchGetMainSiteApi();
-            const respJsonString: string = await fetchPostMobileLoginApi(username, password);
-            console.log("respJsonString: " + respJsonString);
-            let sessionId: string = '';
-            if (respJsonString != null) {
-                const jsonObject: LoginApiJson = JSON.parse(respJsonString);
-                sessionId = jsonObject.sessionId;
-            } else {
-                console.log("respJsonString is null");
-            }
-            console.log("sessionId from LoginScreen: " + sessionId);
+            const respJson: LoginApiJson = await fetchPostMobileLoginApi(username, password);
+            console.log("sessionId: "+ respJson.sessionId);
+            console.log("loginStatus: "+ respJson.loginStatus);
+            let sessionId = respJson.sessionId;
+            let loginStatus = respJson.loginStatus;
             //if have sessionId, thats mean it login already
-            if (sessionId.trim().length !== 0) {
+            if (sessionId.trim().length !== 0 && loginStatus==='success') {
                 setLoginStatus('loginSuccess')
                 console.log("saveing encryped password");
                 await save(ENCRYPTEDPASSWORD, password);
                 await save(USERNAME, username);
             } else {
+                console.log('login fail');
                 setLoginStatus('loginFail');
             }
+            //if login success, navigate to MainScreen
             if (sessionId.trim().length !== 0) {
+                console.log("navigating to mainScreen");
                 navigation.navigate('MainScreen' as never);
-            } else {
-                // Handle login error
-                //nothing handle, cuz will show login fail if loginSusses is false
             }
         }
 
