@@ -4,6 +4,8 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
+You can use `npx react-native doctor` to check your Environment
+
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -24,6 +26,11 @@ Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _roo
 
 ### For Android
 
+1. cd ./android
+2. chmod +x gradlew
+3. gradlew clean
+4. use npm or yarn
+
 ```bash
 # using npm
 npm run android
@@ -33,6 +40,11 @@ yarn android
 ```
 
 ### For iOS
+
+1. npx pod-install
+2. npx expo run:ios
+3. ctrl + c stopping expo cli
+4. use npm or yarn
 
 ```bash
 # using npm
