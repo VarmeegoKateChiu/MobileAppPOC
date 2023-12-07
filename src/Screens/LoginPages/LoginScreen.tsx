@@ -60,10 +60,14 @@ const LoginScreen: React.FC = () => {
             //do auto login
             fetchGetMainSiteApi();
             const respJson: AutoLoginApiJson = await fetchPostMobileAutoLogin(localStoredUsernameString, localStoredPasswordString);
-            console.log("sessionId: "+ respJson.sessionId);
-            console.log("loginStatus: "+ respJson.loginStatus);
+
+            if(respJson === null) {
+                console.log("respJson is null");
+            }
             let sessionId = respJson.sessionId;
             let loginStatus = respJson.loginStatus;
+            console.log("sessionId: "+ sessionId);
+            console.log("loginStatus: "+ loginStatus);
 
             if (sessionId.trim().length !== 0 && loginStatus === 'success') {
                 navigation.navigate('MainScreen' as never);
