@@ -10,6 +10,13 @@ import fetchPostMobileAutoLogin from "../../Api/ManningsApi/fetchPostMobileAutoL
 interface LoginApiJson {
     sessionId: string;
     password: string;
+    loginStatus: string;
+    username: string;
+}
+
+interface AutoLoginApiJson {
+    sessionId: string;
+    loginStatus: string;
 }
 
 async function save(key: string, value: string) {
@@ -30,50 +37,45 @@ async function getValueFor(key: string) {
 const LoginScreen: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loginSuccess, setLoginSuccess] = useState<boolean | undefined>(undefined);
     const navigation = useNavigation();
-    const [isInputEmpty, setIsInputEmpty] = useState(false);
     const [loginStatus, setLoginStatus] = useState('');
     const ENCRYPTEDPASSWORD = 'encryptedPassword';
-    const USERNAME = 'username';
+    const ENCRYPTEDUSERNAME = 'encryptedUsername';
 
     const autoLogin = async () => {
-        let testingPassword = await SecureStore.getItemAsync(ENCRYPTEDPASSWORD);
-        let testingUsername = await SecureStore.getItemAsync(USERNAME);
-        if(typeof testingPassword === 'string'){
-            console.log("testing result: "+ testingPassword);
-            console.log("testing result: "+ testingUsername);
+        let encryptedPassword = await SecureStore.getItemAsync(ENCRYPTEDPASSWORD);
+        let encryptedUsername = await SecureStore.getItemAsync(ENCRYPTEDUSERNAME);
+        if(typeof encryptedPassword === 'string' && typeof encryptedUsername === 'string'){
+            console.log("encryptedPassword: "+ encryptedPassword);
+            console.log("encryptedUsername: "+ encryptedUsername);
         } else {
-            console.log("testingPassword is null");
+            console.log("Password or username is null");
         }
 
-        let localStoredPasswordString: string | null = testingPassword ?? '';
-        let localStoredUsernameString: string | null = testingUsername ?? '';
-        // getValueFor(ENCRYPTEDPASSWORD)
-        //     .then((result) => result ? localStoredPasswordString = result : localStoredPasswordString = null)
-        //     .catch((error) => {
-        //         console.log('Error occurred:', error);
-        //         return null;
-        //     });
+        let localStoredPasswordString: string = encryptedPassword ?? '';
+        let localStoredUsernameString: string = encryptedUsername ?? '';
 
         if (localStoredPasswordString.trim().length !== 0 || localStoredUsernameString.length !== 0) {
             console.log("get localStoredPasswordString: " + localStoredPasswordString);
             //do auto login
             fetchGetMainSiteApi();
-            const respJsonString: string = await fetchPostMobileLoginApi(localStoredUsernameString, localStoredPasswordString);
-            let sessionId: string = '';
-            if (respJsonString != null) {
-                const jsonObject: LoginApiJson = JSON.parse(respJsonString);
-                sessionId = jsonObject.sessionId;
-            } else {
-                console.log("respJsonString is null");
+            const respJson: AutoLoginApiJson = await fetchPostMobileAutoLogin(localStoredUsernameString, localStoredPasswordString);
+
+            if(respJson === null) {
+                console.log("respJson is null");
             }
-            console.log("sessionId from LoginScreen: " + sessionId);
-            if (sessionId.trim().length !== 0) {
+            let sessionId = respJson.sessionId;
+            let loginStatus = respJson.loginStatus;
+            console.log("sessionId: "+ sessionId);
+            console.log("loginStatus: "+ loginStatus);
+
+            if (sessionId.trim().length !== 0 && loginStatus === 'success') {
                 navigation.navigate('MainScreen' as never);
             } else {
                 // Handle login error
-                //nothing handle, cuz will show login fail if loginSusses is false
+                // Handle login error
+                // nothing handle, stay at loginPage to let user login again
+                // very few change to happen since user use this password login success before
             }
         } else {
             console.log("localStoredPasswordString is empty and no need auto login");
@@ -81,7 +83,6 @@ const LoginScreen: React.FC = () => {
     }
 
     const handleLogin = async () => {
-
         //run user login flow
         //if userName Password is empty, show empty message
         if (username.trim() === '' || password.trim() === '') {
@@ -91,30 +92,30 @@ const LoginScreen: React.FC = () => {
             console.log("do login");
             // Simulate login success
             fetchGetMainSiteApi();
-            const respJsonString: string = await fetchPostMobileLoginApi(username, password);
-            console.log("respJsonString: " + respJsonString);
-            let sessionId: string = '';
-            if (respJsonString != null) {
-                const jsonObject: LoginApiJson = JSON.parse(respJsonString);
-                sessionId = jsonObject.sessionId;
-            } else {
-                console.log("respJsonString is null");
-            }
-            console.log("sessionId from LoginScreen: " + sessionId);
+            const respJson: LoginApiJson = await fetchPostMobileLoginApi(username, password);
+            console.log("sessionId: "+ respJson.sessionId);
+            console.log("loginStatus: "+ respJson.loginStatus);
+            let sessionId = respJson.sessionId;
+            let loginStatus = respJson.loginStatus;
             //if have sessionId, thats mean it login already
-            if (sessionId.trim().length !== 0) {
+            if (sessionId.trim().length !== 0 && loginStatus==='success') {
                 setLoginStatus('loginSuccess')
                 console.log("saveing encryped password");
-                await save(ENCRYPTEDPASSWORD, password);
-                await save(USERNAME, username);
+                let encryptedPassword = respJson.password;
+                let encryptedUsername = respJson.username;
+                console.log("encrypted pw: "+ encryptedPassword);
+                console.log("encrypted username: "+ encryptedUsername);
+
+                await save(ENCRYPTEDPASSWORD, encryptedPassword);
+                await save(ENCRYPTEDUSERNAME, encryptedUsername);
             } else {
+                console.log('login fail');
                 setLoginStatus('loginFail');
             }
+            //if login success, navigate to MainScreen
             if (sessionId.trim().length !== 0) {
+                console.log("navigating to mainScreen");
                 navigation.navigate('MainScreen' as never);
-            } else {
-                // Handle login error
-                //nothing handle, cuz will show login fail if loginSusses is false
             }
         }
 
@@ -123,7 +124,7 @@ const LoginScreen: React.FC = () => {
     const resetLocalStorageUserNamePassword = async () => {
         console.log("reset username and password to emp in local storage");
         await save(ENCRYPTEDPASSWORD, '');
-        await save(USERNAME, '');
+        await save(ENCRYPTEDUSERNAME, '');
     }
 
     const handleShowConfig = () => {

@@ -1,11 +1,11 @@
 import Config from 'react-native-config';
 
 const serverDomain = Config.SERVER_DOMAIN ?? '';
-const loginSuffix = '/mobile/login/encrypt';
-const mobileLoginApi = serverDomain + loginSuffix;
+const suffix = Config.MOBILE_AUTO_LOGIN_SUFFIX ?? '';
+const mobileLoginApi = serverDomain + suffix;
 const fetchPostMobileAutoLogin: any = async (userAccount: string, userPassword: string) => {
     try {
-        console.log("fetchPostMobileLoginApi :: fetching: "+ mobileLoginApi);
+        console.log("fetchPostMobileAutoLoginApi :: fetching: "+ mobileLoginApi);
         const response = await fetch(mobileLoginApi, {
             method: "POST",
             headers: {

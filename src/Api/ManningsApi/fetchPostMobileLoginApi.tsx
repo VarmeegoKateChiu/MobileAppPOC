@@ -1,8 +1,8 @@
 import Config from 'react-native-config';
 
 const serverDomain = Config.SERVER_DOMAIN ?? '';
-const loginSuffix = Config.MOBILE_LOGIN_SUFFIX ?? '';
-const mobileLoginApi = serverDomain + loginSuffix;
+const suffix = Config.MOBILE_LOGIN_SUFFIX ?? '';
+const mobileLoginApi = serverDomain + suffix;
 const fetchPostMobileLoginApi: any = async (userAccount: string, userPassword: string) => {
     try {
         console.log("fetchPostMobileLoginApi :: fetching: "+ mobileLoginApi);
