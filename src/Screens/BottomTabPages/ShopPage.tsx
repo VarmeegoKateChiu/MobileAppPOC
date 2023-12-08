@@ -41,6 +41,7 @@ const ManningMainWwbView: React.FC = () => {
     const manningSiteUrl = manningSiteDomain + manningSiteSuffix;
     const [isModalVisible, setModalVisible] = useState(false);
     const isPageLoaded = useRef(false);
+    const [isAnonymousUserState, setIsAnonymousUserState] = useState(false);
 
     // const manningUrl: string = 'https://www.mannings.com.hk';
     // const manningUrl: string = 'https://f6fa-223-197-201-128.ngrok-free.app/?site=manningsdomestichk';
@@ -73,7 +74,10 @@ const ManningMainWwbView: React.FC = () => {
         const isMobileApp = parsedData.isMobileApp;
         console.log('isMobileApp Value:', isMobileApp);
         const isAnonymousUserForMobileApp = parsedData.isAnonymousUserForMobileApp;
-        console.log('isMobileApp Value:', isAnonymousUserForMobileApp);
+        console.log('isAnonymousUserForMobileApp Value:', isAnonymousUserForMobileApp);
+        console.log("typepppp: "+ isAnonymousUserForMobileApp.type);
+        setIsAnonymousUserState(isAnonymousUserForMobileApp);
+
         // const data = { messageType: "webviewMessageTesting" };
         // webViewRef.current?.postMessage(JSON.stringify(data));
 
@@ -96,13 +100,26 @@ const ManningMainWwbView: React.FC = () => {
 
     };
 
+    const handleWebViewLoad = () =>{
+        console.log("run handleWebViewLoad");
+        //can put the js code in server side js
+        const jsCode: string = `
+            delete window.session;
+          `;
+        webViewRef.current?.injectJavaScript(jsCode);
+    }
     useEffect(() => {
 
 
 
-    }, []);
+    }, [isAnonymousUserState]);
     return (
         <View style={styles.container}>
+            <TouchableOpacity onPress={() => {
+                console.log("set anon to true");
+                setIsAnonymousUserState(true)}}>
+                <Text>fdas</Text>
+            </TouchableOpacity>
             {/*go back header when redirect out of main url*/}
             {!shouldHideTopBar && (
                 <View style={styles.topBar}>
@@ -116,11 +133,8 @@ const ManningMainWwbView: React.FC = () => {
             )}
             {/*End go back header when redirect out of main url*/}
             {/*Modal pop up*/}
-            <TouchableOpacity onPress={toggleModal}>
-                <Text>Show Pop-Up</Text>
-            </TouchableOpacity>
-
-            <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
+            {isAnonymousUserState === true &&
+                <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
                 <View style={{ backgroundColor: 'white', padding: 20 }}>
                     <Text>Do you want to proceed?</Text>
 
@@ -134,7 +148,7 @@ const ManningMainWwbView: React.FC = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </Modal>
+            </Modal>}
             {/*End of Modal pop up*/}
             <WebView
                 ref={webViewRef}
@@ -143,6 +157,7 @@ const ManningMainWwbView: React.FC = () => {
                 onNavigationStateChange={handleNavigation}
                 onLoadEnd={handleWebViewLoadEnd}
                 onMessage={handleWebViewMessage}
+                onLoad={handleWebViewLoad}
             />
         </View>
     );
