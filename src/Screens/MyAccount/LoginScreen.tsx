@@ -1,5 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import {View, Button, TextInput, StyleSheet, ImageBackground, Text} from 'react-native';
+import React, {useEffect, useState,} from 'react';
+import {View, SafeAreaView, StatusBar, ScrollView, Image, ImageBackground, TouchableOpacity, Alert, TextInput, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Style from '../../Style/style';
+import Color from '../../Style/Color';
+import Size from '../../Style/Size';
+import str from '../../LocalizedStrings/string'
+
 import {useNavigation} from '@react-navigation/native';
 import fetchPostMobileLoginApi from "../../Api/ManningsApi/fetchPostMobileLoginApi";
 import fetchGetMainSiteApi from "../../Api/ManningsApi/fetchGetMainSiteApi";
@@ -54,12 +60,13 @@ const LoginScreen: React.FC = () => {
 
         let localStoredPasswordString: string = encryptedPassword ?? '';
         let localStoredUsernameString: string = encryptedUsername ?? '';
-        
+
         if (localStoredPasswordString.trim().length !== 0 || localStoredUsernameString.length !== 0) {
             console.log("get localStoredPasswordString: " + localStoredPasswordString);
             //do auto login
             fetchGetMainSiteApi();
             const respJson: AutoLoginApiJson = await fetchPostMobileAutoLogin(localStoredUsernameString, localStoredPasswordString);
+
             if(respJson === null) {
                 console.log("respJson is null");
             }
@@ -140,97 +147,22 @@ const LoginScreen: React.FC = () => {
         autoLogin();
     }, []);
 
-    useEffect(() => {
-        console.log("refresh loginScreen navigation");
-        const refreshContent = navigation.addListener("focus", () => {
-            setUsername("");
-            setPassword("");
-        });
-    }, [navigation]);
-
     //react native config test
     const testingEnv = Config.APP_CONFIG ?? '';
     return (
-        <View style={styles.container}>
-            <ImageBackground source={require('../../../images/LoginPageBgImg.png')} resizeMode="cover"
-                             style={styles.bgImage}>
-                <View style={styles.loginContainer}>
-
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Username"
-                        value={username}
-                        onChangeText={setUsername}
-                    />
-                    <TextInput
-                        style={styles.textInput}
-                        placeholder="Password"
-                        value={password}
-                        onChangeText={setPassword}
-                        secureTextEntry
-                    />
-                    <Button title="Login" onPress={handleLogin}/>
-                    <View>
-                        {/*login fail warning message*/}
-                        {loginStatus === 'loginFail' && (
-                            <View style={styles.warningContainer}>
-                                <Text style={styles.warningText}>Login failed. Please try again.</Text>
-                            </View>
-                        )}
-                        {/*login success message  | (may don't need it)*/}
-                        {loginStatus === 'loginSuccess' && <Text>Login successful</Text>}
-                        {loginStatus === 'empty' && (
-                            <View style={styles.warningContainer}>
-                                <Text style={styles.warningText}>UserName or password is empty. Please try again.</Text>
-                            </View>
-                        )}
-                    </View>
-                    <Text>react native config test</Text>
-
-                    <Text>ENVIRONMENT: {testingEnv}</Text>
-                    <Button title={"Main page"} onPress={() => {
-                        navigation.navigate('MainScreen' as never);
-                    }}></Button>
-                    <Button title={"resetLocalStorage"} onPress={
-                        resetLocalStorageUserNamePassword
-                    }></Button>
-
+        <SafeAreaView style={Style.container}>
+            <StatusBar barStyle="light-content" backgroundColor="#FF8300"/>
+            <ScrollView contentContainerStyle={Style.scrollSize}>
+                <View style={Style.container}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('MainScreen' as never); }}>
+                        <Text style={Style.primaryButton}>{str.login}</Text>
+                    </TouchableOpacity>
                 </View>
-            </ImageBackground>
-        </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "white"
-    },
-    textInput: {
-        width: 200,
-        borderRadius: 10,
-        borderColor: 'grey',
-        borderStartWidth: 1,
-        borderEndWidth: 1,
-        borderTopWidth: 1,
-        borderLeftWidth: 1,
-        borderRightWidth: 1,
-        borderBottomWidth: 1,
-        marginBottom: 20
-    },
-    bgImage: {
-        flex: 1,
-        justifyContent: 'center',
-    },
-    loginContainer: {
-        top: 80,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    warningContainer: {},
-    warningText: {
-        color: 'red',
-    }
-});
+
 
 export default LoginScreen;
