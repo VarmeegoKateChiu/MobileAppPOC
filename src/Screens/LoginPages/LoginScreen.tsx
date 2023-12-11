@@ -54,13 +54,12 @@ const LoginScreen: React.FC = () => {
 
         let localStoredPasswordString: string = encryptedPassword ?? '';
         let localStoredUsernameString: string = encryptedUsername ?? '';
-
+        
         if (localStoredPasswordString.trim().length !== 0 || localStoredUsernameString.length !== 0) {
             console.log("get localStoredPasswordString: " + localStoredPasswordString);
             //do auto login
             fetchGetMainSiteApi();
             const respJson: AutoLoginApiJson = await fetchPostMobileAutoLogin(localStoredUsernameString, localStoredPasswordString);
-
             if(respJson === null) {
                 console.log("respJson is null");
             }
@@ -140,6 +139,14 @@ const LoginScreen: React.FC = () => {
         console.log("run LoginScreen");
         autoLogin();
     }, []);
+
+    useEffect(() => {
+        console.log("refresh loginScreen navigation");
+        const refreshContent = navigation.addListener("focus", () => {
+            setUsername("");
+            setPassword("");
+        });
+    }, [navigation]);
 
     //react native config test
     const testingEnv = Config.APP_CONFIG ?? '';
