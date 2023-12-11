@@ -5,45 +5,22 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-//import 'react-native-gesture-handler';
-
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HeaderNav from "./component/nav/HeaderNav"
-import MainNavContainer from "./src/Screens/MainNavContainer";
-
-
+import React ,{PropsWithChildren} from 'react';
+import {View, SafeAreaView, StatusBar, ScrollView, Image, ImageBackground, TouchableOpacity, Alert, TextInput, Text, StyleSheet} from 'react-native';
+import Routes from "./src/Routes";
 
 function App(): JSX.Element {
-
   return (
-        <MainNavContainer />
+    <View style={styles.container}>
+      <Routes/>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1
+  }
 });
 
 export default App;

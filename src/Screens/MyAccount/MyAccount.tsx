@@ -2,7 +2,7 @@ import {Text, View, TouchableOpacity, ScrollView, StyleSheet} from "react-native
 import React, {useEffect, useState} from "react";
 import {color} from "@rneui/base";
 import absoluteFill = StyleSheet.absoluteFill;
-import LoginTextInput from "../../CommonComponent/LoginTextInput";
+import LoginTextInput from "../../Component/CommonComponent/LoginTextInput";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as SecureStore from 'expo-secure-store';
 import fetchGetMainSiteApi from "../../Api/ManningsApi/fetchGetMainSiteApi";
@@ -10,7 +10,7 @@ import fetchPostMobileLoginApi from "../../Api/ManningsApi/fetchPostMobileLoginA
 import Config from 'react-native-config';
 import {useNavigation} from "@react-navigation/native";
 
-function MyProfilePage() {
+function MyAccount() {
 
     const [responseData, setResponseData] = useState("");
     const [responseMainSiteData, setResponseMainSiteData] = useState("");
@@ -244,4 +244,4 @@ function MyProfilePage() {
     );
 }
 
-export default MyProfilePage;
+export default MyAccount;
