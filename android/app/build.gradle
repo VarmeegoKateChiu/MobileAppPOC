@@ -85,6 +85,7 @@ android {
     defaultConfig {
         applicationId "com.reactmobileappdemo"
         minSdkVersion rootProject.ext.minSdkVersion
+        multiDexEnabled true
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -103,7 +104,7 @@ android {
         }
         production {
             dimension 'env'
-            applicationIdSuffix ""
+            applicationIdSuffix ".production"
         }
     }
     signingConfigs {
