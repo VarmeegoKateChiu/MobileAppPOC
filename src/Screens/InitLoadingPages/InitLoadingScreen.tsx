@@ -1,9 +1,9 @@
 import {ActivityIndicator, Text, View} from "react-native";
 import React, {useEffect, useState} from "react";
 import {useNavigation} from "@react-navigation/native";
-import fetchGetMainSiteApi from "../Api/ManningsApi/fetchGetMainSiteApi";
+import fetchGetMainSiteApi from "../../Api/ManningsApi/fetchGetMainSiteApi";
 import ThemedImage from "@rneui/themed/dist/Image";
-import fetchGetInitMobile from "../Api/ManningsApi/fetchGetInitMobile";
+import fetchGetInitMobile from "../../Api/ManningsApi/fetchGetInitMobile";
 import Config from 'react-native-config';
 
 const InitLoadingScreen = () => {
@@ -29,15 +29,18 @@ const InitLoadingScreen = () => {
         } catch (e) {
             console.log("wont navigate to LoginScreen due to some error");
         }
+
+
+
     }, []);
 
     return (
+        <>
+            <Text>InitLoadingScreen</Text>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text>InitLoadingScreen</Text>
-           
                 {isLoading ? <ActivityIndicator size="large" color="black"/> : null}
             </View>
-
+        </>
     );
 }
 

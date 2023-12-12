@@ -1,7 +1,7 @@
 import {Text, View} from "react-native";
 import React from "react";
 
-function Notifications() {
+function NotificationPage() {
     return (
 
 
@@ -10,4 +10,4 @@ function Notifications() {
     );
 }
 
-export default Notifications;
+export default NotificationPage;
