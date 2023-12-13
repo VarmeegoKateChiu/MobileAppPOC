@@ -1,6 +1,12 @@
 import { Text, View ,StyleSheet, Dimensions } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import Style from '../Style/Style';
+import Color from '../Style/Color';
+import Width from '../Style/Width';
+import Height from '../Style/Height';
+
 import StoreLocationPage from "../Screens/BottomTabPages/StoreLocationPage";
 import MyProfilePage from "../Screens/BottomTabPages/MyProfilePage";
 import ManningMainWwbView from "../Screens/BottomTabPages/ShopPage";
@@ -11,6 +17,7 @@ import MaterialIconInBottomTab from "../IconComponent/MaterialIconInBottomTab";
 import ShopPage from "../Screens/BottomTabPages/ShopPage";
 import NotificationPage from "../Screens/BottomTabPages/NorificationPage";
 
+
 const styles = StyleSheet.create({
 
 
@@ -20,11 +27,7 @@ const Tab = createBottomTabNavigator();
 const BottomTabsNav = () => {
     const { width, height } = Dimensions.get("window")
     return (
-        <View style={{
-            width,
-            height,
-            flex: 1,
-        }}>
+        <View style={{flex: 1, width: Width.wp100}}>
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarHideOnKeyboard: true,
