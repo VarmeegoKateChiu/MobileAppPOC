@@ -32,22 +32,16 @@ const BottomTabsNav = () => {
                 tabBarActiveBackgroundColor:'#FFFFFF',
                 tabBarInactiveBackgroundColor:'#FF8300',
                 tabBarIcon: ({ focused }) => {
-                    let iconColor;
-
                     if (route.name === 'Promotion') {
-                        iconColor = focused ? '#FF8300' : '#000000';
                         return <MaterialIconInBottomTab name="receipt" focused={focused} />
-                    } else if (route.name === 'Shop') {
-                        iconColor = focused ? '#FF8300' : '#000000';
+                    } else if (route.name === 'Notification') {
                         return <MaterialIconInBottomTab name="notifications" focused={focused} />
-                    } else if (route.name === 'Store Location') {
-                        iconColor = focused ? '#FF8300' : '#000000';
+                    } else if (route.name === 'EShop') {
                         return<MaterialIconInBottomTab name="room" focused={focused} />
+                    } else if (route.name === 'Store Location') {
+                        return <MaterialIconInBottomTab name="room" focused={focused} />
                     } else if (route.name === 'My Profile') {
-                        iconColor = focused ? '#FF8300' : '#000000';
                         return <MaterialIconInBottomTab name="person" focused={focused} />
-                    } else if (route.name === 'CircleTab') {
-                        return <StorefrontCircleBg focused={focused}></StorefrontCircleBg>
                     }
                     return null
                     ;
@@ -56,8 +50,8 @@ const BottomTabsNav = () => {
 
         >
             <Tab.Screen name='Promotion' component={PromotionPage} options={{ headerShown: false }} />
-            <Tab.Screen name="Shop" component={NotificationPage} options={{ headerShown: false }} />
-            <Tab.Screen name="CircleTab" component={ManningMainWwbView} options={{ headerShown: false }} />
+            <Tab.Screen name="Notification" component={NotificationPage} options={{ headerShown: false }} />
+            <Tab.Screen name="EShop" component={ManningMainWwbView} options={{ headerShown: false }} />
             <Tab.Screen name="Store Location" component={StoreLocationPage} options={{ headerShown: false }} />
             <Tab.Screen name="My Profile" component={MyProfilePage} options={{ headerShown: false }} />
         </Tab.Navigator>
