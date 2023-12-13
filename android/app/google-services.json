@@ -1,21 +1,59 @@
 {
   "project_info": {
-    "project_number": "469514188262",
-    "project_id": "mobileapppoc-363b5",
-    "storage_bucket": "mobileapppoc-363b5.appspot.com"
+    "project_number": "330302469107",
+    "project_id": "mobileapppoc-b8ac1",
+    "storage_bucket": "mobileapppoc-b8ac1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:469514188262:android:de8a8cb2e0f2947bd15227",
+        "mobilesdk_app_id": "1:330302469107:android:09cd8e4fc6261fbe02d886",
         "android_client_info": {
-          "package_name": "com.reactmobileappdemo"
+          "package_name": "com.reactmobileappdemo.development"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDN3u7X7kI-Tl6muzwAvRA8aA9zaHW2q3A"
+          "current_key": "AIzaSyCyuEJsueJqFtV3pLOY0-v_gGzN4PKGu4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330302469107:android:09cd8e4fc6261fbe02d886",
+        "android_client_info": {
+          "package_name": "com.reactmobileappdemo.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyuEJsueJqFtV3pLOY0-v_gGzN4PKGu4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330302469107:android:09cd8e4fc6261fbe02d886",
+        "android_client_info": {
+          "package_name": "com.reactmobileappdemo.production"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyuEJsueJqFtV3pLOY0-v_gGzN4PKGu4E"
         }
       ],
       "services": {
