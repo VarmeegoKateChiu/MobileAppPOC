@@ -18,6 +18,10 @@
 		8CAE03DE2B26FEAC00774CB0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE03DC2B26FEAC00774CB0 /* Fonts */; };
 		8F065916BDB8BB620076EA6F /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4463FA6E7405D3E016BE584 /* ExpoModulesProvider.swift */; };
 		DC97CA7B867182F6E256F3E0 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465CB194942CF9787889922F /* ExpoModulesProvider.swift */; };
+		EE70DDB52B29A92700C0986B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE70DDB42B29A92700C0986B /* GoogleService-Info.plist */; };
+		EE70DDB82B29AA0900C0986B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EE70DDB72B29AA0900C0986B /* FirebaseAnalytics */; };
+		EE70DDBA2B29AA0900C0986B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE70DDB92B29AA0900C0986B /* FirebaseAuth */; };
+		EE70DDBC2B29AA0900C0986B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EE70DDBB2B29AA0900C0986B /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,7 @@
 		8CAE03DC2B26FEAC00774CB0 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		B4463FA6E7405D3E016BE584 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-reactMobileAppDemo/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EE70DDB42B29A92700C0986B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE70DDBC2B29AA0900C0986B /* FirebaseMessaging in Frameworks */,
+				EE70DDB82B29AA0900C0986B /* FirebaseAnalytics in Frameworks */,
+				EE70DDBA2B29AA0900C0986B /* FirebaseAuth in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-reactMobileAppDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +101,7 @@
 		13B07FAE1A68108700A75B9A /* reactMobileAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EE70DDB42B29A92700C0986B /* GoogleService-Info.plist */,
 				8CAE03DC2B26FEAC00774CB0 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -226,6 +235,11 @@
 			dependencies = (
 			);
 			name = reactMobileAppDemo;
+			packageProductDependencies = (
+				EE70DDB72B29AA0900C0986B /* FirebaseAnalytics */,
+				EE70DDB92B29AA0900C0986B /* FirebaseAuth */,
+				EE70DDBB2B29AA0900C0986B /* FirebaseMessaging */,
+			);
 			productName = reactMobileAppDemo;
 			productReference = 13B07F961A680F5B00A75B9A /* reactMobileAppDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +270,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				EE70DDB62B29AA0900C0986B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAE03DD2B26FEAC00774CB0 /* Fonts in Resources */,
+				EE70DDB52B29A92700C0986B /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -792,6 +810,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE70DDB62B29AA0900C0986B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE70DDB72B29AA0900C0986B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE70DDB62B29AA0900C0986B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EE70DDB92B29AA0900C0986B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE70DDB62B29AA0900C0986B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EE70DDBB2B29AA0900C0986B /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE70DDB62B29AA0900C0986B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
