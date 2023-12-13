@@ -3,9 +3,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ManningMainWwbView from '../staticPage/BottomTabPages/ShopPage';
-import PromotionPage from '../staticPage/BottomTabPages/PromotionPage';
-import StoreLocationPage from '../staticPage/BottomTabPages/StoreLocationPage';
-import MyProfilePage from '../staticPage/BottomTabPages/MyProfilePage';
+import PromotionPage from '../staticPage/BottomTabPages/PromotionScreen';
+import StoreLocationPage from '../staticPage/BottomTabPages/StoreLocationScreen';
+import MyProfilePage from '../staticPage/BottomTabPages/MyAccountScreen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {RocketLaunch,Menu} from "@mui/icons-material";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
