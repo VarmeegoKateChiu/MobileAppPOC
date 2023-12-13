@@ -1,7 +1,7 @@
 import {Text, View} from "react-native";
 import React from "react";
 
-function StoreLocationPage() {
+function StoreLocationScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Store Location Screen</Text>
@@ -9,4 +9,4 @@ function StoreLocationPage() {
     );
 }
 
-export default StoreLocationPage;
+export default StoreLocationScreen;

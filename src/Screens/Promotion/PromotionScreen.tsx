@@ -1,7 +1,7 @@
 import {Text, View} from "react-native";
 import React from "react";
 
-function PromotionPage() {
+function PromotionScreen() {
     return (
 
 
@@ -10,4 +10,4 @@ function PromotionPage() {
     );
 }
 
-export default PromotionPage;
+export default PromotionScreen;

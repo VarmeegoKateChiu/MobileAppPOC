@@ -10,7 +10,7 @@ import fetchPostMobileLoginApi from "../../Api/ManningsApi/fetchPostMobileLoginA
 import Config from 'react-native-config';
 import {useNavigation} from "@react-navigation/native";
 
-function MyProfilePage() {
+function MyAccountScreen() {
 
     const [responseData, setResponseData] = useState("");
     const [responseMainSiteData, setResponseMainSiteData] = useState("");
@@ -244,4 +244,4 @@ function MyProfilePage() {
     );
 }
 
-export default MyProfilePage;
+export default MyAccountScreen;
