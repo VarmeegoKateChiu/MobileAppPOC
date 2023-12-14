@@ -193,11 +193,12 @@ const ManningMainWwbView: React.FC = () => {
     }, [isAnonymousUserState]);
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => {
-                console.log("set anon to true");
-                setIsAnonymousUserState(true)}}>
-                <Text>fdas</Text>
-            </TouchableOpacity>
+            <Text>{manningSiteUrl}</Text>
+            {/*<TouchableOpacity onPress={() => {*/}
+            {/*    console.log("set anon to true");*/}
+            {/*    setIsAnonymousUserState(true)}}>*/}
+            {/*    <Text>fdas</Text>*/}
+            {/*</TouchableOpacity>*/}
             {/*go back header when redirect out of main url*/}
             {!shouldHideTopBar && (
                 <View style={styles.topBar}>
