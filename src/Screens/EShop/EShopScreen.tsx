@@ -124,7 +124,12 @@ const ManningMainWwbView: React.FC = () => {
 
             if (sessionId.trim().length !== 0 && loginStatus === 'success') {
                 console.log("refreshed timeout session");
-                webViewRef.current.reload();
+                if(webViewRef.current !== null){
+                    webViewRef.current.reload();
+                } else {
+                    console.log("webViewRef.current is null");
+                }
+
             } else {
                 navigation.navigate('LoginScreen' as never);
             }
