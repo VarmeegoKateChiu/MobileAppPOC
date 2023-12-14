@@ -33,7 +33,7 @@
     "ios:prod-release": "npm run ios:clean ; npm run ios:bundle:assets ; npm run setProduction && react-native run-ios --configuration Release --scheme production",
     "aos:clean": "npm run node:clean & cd android & gradlew clean",
     "aos:bundle:assets": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
-    "aos:remove:assets": "rmdir /s /q android\\app\\src\\main\\res\\drawable-hdpi android\\app\\src\\main\\res\\drawable-mdpi android\\app\\src\\main\\res\\drawable-xhdpi android\\app\\src\\main\\res\\drawable-xxhdpi android\\app\\src\\mai\nn\\res\\drawable-xxxhdpi android\\app\\src\\main\\res\\raw\n",
+    "aos:remove:assets": "rmdir /s /q \"android/app/src/main/res/drawable-hdpi\" \"android/app/src/main/res/drawable-xxxhdpi\" \"android/app/src/main/res/drawable-xhdpi\"  \"android/app/src/main/res/drawable-xxhdpi\" \"android/app/src/main/res/raw\" \"android/app/src/main/res/drawable-mdpi\"",
     "aos:dev": "npm run setDevelopment && react-native run-android --variant=developmentDebug --appIdSuffix=development",
     "aos:dev-release": "npm run setDevelopment && react-native run-android --variant=developmentRelease --appIdSuffix=development",
     "aos:staging": "npm run setStaging && react-native run-android --variant=stagingDebug --appIdSuffix=staging",
