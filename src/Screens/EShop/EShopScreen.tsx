@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Button} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Button, ActivityIndicator} from 'react-native';
 import {WebView, WebViewMessageEvent, WebViewNavigation} from 'react-native-webview';
 import { AntDesign } from '@expo/vector-icons';
 import CookieManager, {Cookie} from '@react-native-cookies/cookies';
@@ -58,7 +58,9 @@ const ManningMainWwbView: React.FC = () => {
     const navigation = useNavigation();
     const ENCRYPTEDPASSWORD = 'encryptedPassword';
     const ENCRYPTEDUSERNAME = 'encryptedUsername';
-
+    const [isLoading, setLoading] = useState(false);
+    const [webViewHeight, setWebViewHeight] = useState(1);
+    const [showWebView, setShowWebView] = useState(true);
     // const manningUrl: string = 'https://www.mannings.com.hk';
     // const manningUrl: string = 'https://f6fa-223-197-201-128.ngrok-free.app/?site=manningsdomestichk';
     const handleNavigation = (event: WebViewNavigation) => {
@@ -234,14 +236,35 @@ const ManningMainWwbView: React.FC = () => {
                 </View>
             </Modal>}
             {/*End of Modal pop up*/}
+            {isLoading && (
+                <View style={{ position: 'absolute', top: '50%', left: '50%', transform: [{ translateX: -25 }, { translateY: -25 }] }}>
+                    <ActivityIndicator
+                        color="#009688"
+                        size="large"
+                    />
+
+                </View>
+            )}
             <WebView
                 ref={webViewRef}
                 source={{ uri: manningSiteUrl}}
-                style={{ flex: 1 }}
+                style={{ flex: webViewHeight }}
                 onNavigationStateChange={handleNavigation}
                 onLoadEnd={handleWebViewLoadEnd}
                 onMessage={handleWebViewMessage}
                 onLoad={handleWebViewLoad}
+                onLoadProgress={({nativeEvent}) => {
+                    if (nativeEvent.progress != 1 && !isLoading ) {
+                        console.log("hide web");
+                        setLoading(true);
+                        //why use height instead of {isWebViewShow && <WebView...}? , because use this approach the web will never load and wont have load progress
+                        setWebViewHeight(0);
+                    } else if (nativeEvent.progress == 1 ) {
+                        console.log("show web");
+                        setLoading(false)
+                        setWebViewHeight(1);
+                    }
+                }}
             />
         </View>
     );
