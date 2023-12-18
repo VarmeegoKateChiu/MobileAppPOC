@@ -9,6 +9,7 @@ import fetchPostMobileAutoLogin from "../../Api/ManningsApi/fetchPostMobileAutoL
 import * as SecureStore from 'expo-secure-store';
 import {useNavigation} from '@react-navigation/native';
 import fetchGetMainSiteApi from "../../Api/ManningsApi/fetchGetMainSiteApi";
+import {WebViewNativeProgressEvent, WebViewProgressEvent} from "react-native-webview/lib/WebViewTypes";
 
 
 // interface Cookie {
@@ -61,6 +62,7 @@ const ManningMainWwbView: React.FC = () => {
     const [isLoading, setLoading] = useState(false);
     const [webViewHeight, setWebViewHeight] = useState(1);
     const [showWebView, setShowWebView] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
     // const manningUrl: string = 'https://www.mannings.com.hk';
     // const manningUrl: string = 'https://f6fa-223-197-201-128.ngrok-free.app/?site=manningsdomestichk';
     const handleNavigation = (event: WebViewNavigation) => {
@@ -75,7 +77,6 @@ const ManningMainWwbView: React.FC = () => {
     };
 
     const shouldHideTopBar = currentUrl.startsWith(manningSiteDomain);
-
 
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
@@ -167,7 +168,8 @@ const ManningMainWwbView: React.FC = () => {
         // }
     };
     const handleWebViewLoadEnd = () => {
-
+        console.log("set isLoaded to true")
+        setIsLoaded(true);
         // console.log("run handleWebViewLoadEnd");
         // //can put the js code in server side js
         // const jsCode: string = `
@@ -178,6 +180,19 @@ const ManningMainWwbView: React.FC = () => {
         // webViewRef.current?.injectJavaScript(jsCode);
 
     };
+
+    const handleOnLoadProgress = (nativeEvent: WebViewNativeProgressEvent) => {
+        if (nativeEvent.progress !== 1 && !isLoading) {
+            console.log("hide web");
+            setLoading(true);
+            setWebViewHeight(0);
+            setIsLoaded(false);
+        } else if (nativeEvent.progress === 1) {
+            console.log("show web");
+            setLoading(false);
+            setWebViewHeight(1);
+        }
+    }
 
     const handleWebViewLoad = () =>{
         console.log("run handleWebViewLoad");
@@ -195,29 +210,12 @@ const ManningMainWwbView: React.FC = () => {
     }
     useEffect(() => {
         checkFlag();
-
-
+        console.log("cur URl: "+currentUrl);
+        console.log("eq?: "+ currentUrl !== 'https://www.mannings.com.hk/')
     }, [isAnonymousUserState]);
     return (
         <View style={styles.container}>
             <Text>{manningSiteUrl}</Text>
-            {/*<TouchableOpacity onPress={() => {*/}
-            {/*    console.log("set anon to true");*/}
-            {/*    setIsAnonymousUserState(true)}}>*/}
-            {/*    <Text>fdas</Text>*/}
-            {/*</TouchableOpacity>*/}
-            {/*go back header when redirect out of main url*/}
-            {!shouldHideTopBar && (
-                <View style={styles.topBar}>
-                    {!shouldHideTopBar && (
-                        <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
-                            <AntDesign name="arrowleft" style={styles.backButtonIcon} />
-                        </TouchableOpacity>
-                    )}
-
-                </View>
-            )}
-            {/*End go back header when redirect out of main url*/}
             {/*Modal pop up*/}
             {isAnonymousUserState === true &&
                 <Modal isVisible={isModalVisible} onBackdropPress={toggleModal}>
@@ -236,15 +234,16 @@ const ManningMainWwbView: React.FC = () => {
                 </View>
             </Modal>}
             {/*End of Modal pop up*/}
+            {/*start loading screen*/}
             {isLoading && (
                 <View style={{ position: 'absolute', top: '50%', left: '50%', transform: [{ translateX: -25 }, { translateY: -25 }] }}>
                     <ActivityIndicator
                         color="#009688"
                         size="large"
                     />
-
                 </View>
             )}
+            {/*end loading screen*/}
             <WebView
                 ref={webViewRef}
                 source={{ uri: manningSiteUrl}}
@@ -253,19 +252,19 @@ const ManningMainWwbView: React.FC = () => {
                 onLoadEnd={handleWebViewLoadEnd}
                 onMessage={handleWebViewMessage}
                 onLoad={handleWebViewLoad}
-                onLoadProgress={({nativeEvent}) => {
-                    if (nativeEvent.progress != 1 && !isLoading ) {
-                        console.log("hide web");
-                        setLoading(true);
-                        //why use height instead of {isWebViewShow && <WebView...}? , because use this approach the web will never load and wont have load progress
-                        setWebViewHeight(0);
-                    } else if (nativeEvent.progress == 1 ) {
-                        console.log("show web");
-                        setLoading(false)
-                        setWebViewHeight(1);
-                    }
-                }}
+                onLoadProgress={({ nativeEvent }) => handleOnLoadProgress(nativeEvent)}
+                setSupportMultipleWindows={false}
             />
+            {/*start back button bar*/}
+            {/*not manning main site or start with manning main site*/}
+            {(currentUrl != manningSiteDomain || !shouldHideTopBar) && isLoaded && (
+                <View style={styles.topBar}>
+                    <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
+                        <AntDesign name="arrowleft" style={styles.backButtonIcon} />
+                    </TouchableOpacity>
+                </View>
+            )}
+            {/*end back button bar*/}
         </View>
     );
 };
