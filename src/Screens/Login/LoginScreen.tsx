@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, Button, TextInput, StyleSheet, ImageBackground, Text} from 'react-native';
+import CheckBox from '@react-native-community/checkbox'
 import {useNavigation} from '@react-navigation/native';
 import fetchPostMobileLoginApi from "../../Api/ManningsApi/fetchPostMobileLoginApi";
 import fetchGetMainSiteApi from "../../Api/ManningsApi/fetchGetMainSiteApi";
@@ -12,6 +13,7 @@ interface LoginApiJson {
     password: string;
     loginStatus: string;
     username: string;
+    rememberMe: boolean;
 }
 
 interface AutoLoginApiJson {
@@ -39,6 +41,7 @@ const LoginScreen: React.FC = () => {
     const [password, setPassword] = useState('');
     const navigation = useNavigation();
     const [loginStatus, setLoginStatus] = useState('');
+    const [rememberMeChecked, setRememberMeChecked] = useState(true);
     const ENCRYPTEDPASSWORD = 'encryptedPassword';
     const ENCRYPTEDUSERNAME = 'encryptedUsername';
 
@@ -92,7 +95,7 @@ const LoginScreen: React.FC = () => {
             console.log("do login");
             // Simulate login success
             fetchGetMainSiteApi();
-            const respJson: LoginApiJson = await fetchPostMobileLoginApi(username, password);
+            const respJson: LoginApiJson = await fetchPostMobileLoginApi(username, password, rememberMeChecked);
             console.log("sessionId: "+ respJson.sessionId);
             console.log("loginStatus: "+ respJson.loginStatus);
             let sessionId = respJson.sessionId;
@@ -162,6 +165,13 @@ const LoginScreen: React.FC = () => {
                         onChangeText={setPassword}
                         secureTextEntry
                     />
+                    <View style={styles.container1}>
+                            <CheckBox
+                                value={rememberMeChecked}
+                                onValueChange={setRememberMeChecked}
+                            />
+                            <Text style={styles.keepMeSignedInText}>Keep me signed in</Text>
+                    </View>
                     <Button title="Login" onPress={handleLogin}/>
                     <View>
                         {/*login fail warning message*/}
@@ -198,6 +208,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "white"
+    },
+    container1: {
+            flex: 1,
+            flexDirection:'row',
+            flexWrap:'wrap',
+            marginBottom: 30
+    },
+    keepMeSignedInText: {
+        marginTop: 5
     },
     textInput: {
         width: 200,
