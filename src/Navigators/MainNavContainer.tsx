@@ -10,7 +10,7 @@ const MainNavContainer = () => {
     return(
 
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{gestureEnabled: false}}>
                 <Stack.Screen name="InitLoadingScreen" component={InitLoadingScreen} options={{ headerShown: false }}/>
                 <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }}/>
                 <Stack.Screen name="MainScreen" component={BottomTabsNav} options={{ headerShown: false }}/>
