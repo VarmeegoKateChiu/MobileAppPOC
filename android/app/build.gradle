@@ -84,9 +84,9 @@ android {
     namespace "com.reactmobileappdemo"
     defaultConfig {
         applicationId "com.reactmobileappdemo"
-        minSdkVersion rootProject.ext.minSdkVersion
         multiDexEnabled true
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion = 21
+        targetSdkVersion = 33
         versionCode 1
         versionName "1.0"
         resValue "string", "build_config_package", "com.reactmobileappdemo"
