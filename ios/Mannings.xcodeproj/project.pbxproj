@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* reactMobileAppDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactMobileAppDemoTests.m */; };
+		00E356F31AD99517003FC87E /* ManningsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ManningsTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6E0EE69E282F550DF9B39A6C /* libPods-reactMobileAppDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0A0ECBE97485E192CB5554 /* libPods-reactMobileAppDemo.a */; };
-		7EA748A686B3E75A7546FB5E /* libPods-reactMobileAppDemo-reactMobileAppDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A253E3BE07CB2C353392140 /* libPods-reactMobileAppDemo-reactMobileAppDemoTests.a */; };
+		6E0EE69E282F550DF9B39A6C /* libPods-Mannings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0A0ECBE97485E192CB5554 /* libPods-Mannings.a */; };
+		7EA748A686B3E75A7546FB5E /* libPods-Mannings-ManningsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A253E3BE07CB2C353392140 /* libPods-Mannings-ManningsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8CAE03DD2B26FEAC00774CB0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE03DC2B26FEAC00774CB0 /* Fonts */; };
 		8CAE03DE2B26FEAC00774CB0 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8CAE03DC2B26FEAC00774CB0 /* Fonts */; };
@@ -26,31 +26,31 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = reactMobileAppDemo;
+			remoteInfo = Mannings;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* reactMobileAppDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reactMobileAppDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* ManningsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManningsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* reactMobileAppDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reactMobileAppDemoTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* reactMobileAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reactMobileAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = reactMobileAppDemo/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = reactMobileAppDemo/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = reactMobileAppDemo/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = reactMobileAppDemo/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = reactMobileAppDemo/main.m; sourceTree = "<group>"; };
-		2F07E5B505C121A6389388DD /* Pods-reactMobileAppDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactMobileAppDemo.debug.xcconfig"; path = "Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		465CB194942CF9787889922F /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		6A253E3BE07CB2C353392140 /* libPods-reactMobileAppDemo-reactMobileAppDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactMobileAppDemo-reactMobileAppDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E6DACF25319B4F45994DC7D /* Pods-reactMobileAppDemo-reactMobileAppDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactMobileAppDemo-reactMobileAppDemoTests.release.xcconfig"; path = "Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = reactMobileAppDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ManningsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManningsTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Mannings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mannings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Mannings/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Mannings/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Mannings/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mannings/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Mannings/main.m; sourceTree = "<group>"; };
+		2F07E5B505C121A6389388DD /* Pods-Mannings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mannings.debug.xcconfig"; path = "Target Support Files/Pods-Mannings/Pods-Mannings.debug.xcconfig"; sourceTree = "<group>"; };
+		465CB194942CF9787889922F /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Mannings-ManningsTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		6A253E3BE07CB2C353392140 /* libPods-Mannings-ManningsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mannings-ManningsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6DACF25319B4F45994DC7D /* Pods-Mannings-ManningsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mannings-ManningsTests.release.xcconfig"; path = "Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Mannings/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CAE03DC2B26FEAC00774CB0 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
-		AB56CDEAE6436C91CB74436C /* Pods-reactMobileAppDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactMobileAppDemo.release.xcconfig"; path = "Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo.release.xcconfig"; sourceTree = "<group>"; };
-		AE0A0ECBE97485E192CB5554 /* libPods-reactMobileAppDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactMobileAppDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4463FA6E7405D3E016BE584 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-reactMobileAppDemo/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		AB56CDEAE6436C91CB74436C /* Pods-Mannings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mannings.release.xcconfig"; path = "Target Support Files/Pods-Mannings/Pods-Mannings.release.xcconfig"; sourceTree = "<group>"; };
+		AE0A0ECBE97485E192CB5554 /* libPods-Mannings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mannings.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4463FA6E7405D3E016BE584 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Mannings/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FD16263DD860B48595F334D5 /* Pods-reactMobileAppDemo-reactMobileAppDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactMobileAppDemo-reactMobileAppDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD16263DD860B48595F334D5 /* Pods-Mannings-ManningsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mannings-ManningsTests.debug.xcconfig"; path = "Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA748A686B3E75A7546FB5E /* libPods-reactMobileAppDemo-reactMobileAppDemoTests.a in Frameworks */,
+				7EA748A686B3E75A7546FB5E /* libPods-Mannings-ManningsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,20 +66,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E0EE69E282F550DF9B39A6C /* libPods-reactMobileAppDemo.a in Frameworks */,
+				6E0EE69E282F550DF9B39A6C /* libPods-Mannings.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* reactMobileAppDemoTests */ = {
+		00E356EF1AD99517003FC87E /* ManningsTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* reactMobileAppDemoTests.m */,
+				00E356F21AD99517003FC87E /* ManningsTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = reactMobileAppDemoTests;
+			path = ManningsTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -90,7 +90,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* reactMobileAppDemo */ = {
+		13B07FAE1A68108700A75B9A /* Mannings */ = {
 			isa = PBXGroup;
 			children = (
 				8CAE03DC2B26FEAC00774CB0 /* Fonts */,
@@ -101,25 +101,25 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = reactMobileAppDemo;
+			name = Mannings;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				AE0A0ECBE97485E192CB5554 /* libPods-reactMobileAppDemo.a */,
-				6A253E3BE07CB2C353392140 /* libPods-reactMobileAppDemo-reactMobileAppDemoTests.a */,
+				AE0A0ECBE97485E192CB5554 /* libPods-Mannings.a */,
+				6A253E3BE07CB2C353392140 /* libPods-Mannings-ManningsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		75FBA2B50DEBB7B24A085BE2 /* reactMobileAppDemoTests */ = {
+		75FBA2B50DEBB7B24A085BE2 /* ManningsTests */ = {
 			isa = PBXGroup;
 			children = (
 				465CB194942CF9787889922F /* ExpoModulesProvider.swift */,
 			);
-			name = reactMobileAppDemoTests;
+			name = ManningsTests;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -132,9 +132,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* reactMobileAppDemo */,
+				13B07FAE1A68108700A75B9A /* Mannings */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* reactMobileAppDemoTests */,
+				00E356EF1AD99517003FC87E /* ManningsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -148,27 +148,27 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* reactMobileAppDemo.app */,
-				00E356EE1AD99517003FC87E /* reactMobileAppDemoTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Mannings.app */,
+				00E356EE1AD99517003FC87E /* ManningsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9E93646CE6BB392C60350431 /* reactMobileAppDemo */ = {
+		9E93646CE6BB392C60350431 /* Mannings */ = {
 			isa = PBXGroup;
 			children = (
 				B4463FA6E7405D3E016BE584 /* ExpoModulesProvider.swift */,
 			);
-			name = reactMobileAppDemo;
+			name = Mannings;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F07E5B505C121A6389388DD /* Pods-reactMobileAppDemo.debug.xcconfig */,
-				AB56CDEAE6436C91CB74436C /* Pods-reactMobileAppDemo.release.xcconfig */,
-				FD16263DD860B48595F334D5 /* Pods-reactMobileAppDemo-reactMobileAppDemoTests.debug.xcconfig */,
-				6E6DACF25319B4F45994DC7D /* Pods-reactMobileAppDemo-reactMobileAppDemoTests.release.xcconfig */,
+				2F07E5B505C121A6389388DD /* Pods-Mannings.debug.xcconfig */,
+				AB56CDEAE6436C91CB74436C /* Pods-Mannings.release.xcconfig */,
+				FD16263DD860B48595F334D5 /* Pods-Mannings-ManningsTests.debug.xcconfig */,
+				6E6DACF25319B4F45994DC7D /* Pods-Mannings-ManningsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -176,8 +176,8 @@
 		C20EB25702552A0386727ECF /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				9E93646CE6BB392C60350431 /* reactMobileAppDemo */,
-				75FBA2B50DEBB7B24A085BE2 /* reactMobileAppDemoTests */,
+				9E93646CE6BB392C60350431 /* Mannings */,
+				75FBA2B50DEBB7B24A085BE2 /* ManningsTests */,
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
@@ -185,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* reactMobileAppDemoTests */ = {
+		00E356ED1AD99517003FC87E /* ManningsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "reactMobileAppDemoTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ManningsTests" */;
 			buildPhases = (
 				92A280E651532D2C660610DB /* [CP] Check Pods Manifest.lock */,
 				D4BB4CCC67CB5A9A2F8FB1D0 /* [Expo] Configure project */,
@@ -202,14 +202,13 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = reactMobileAppDemoTests;
-			productName = reactMobileAppDemoTests;
-			productReference = 00E356EE1AD99517003FC87E /* reactMobileAppDemoTests.xctest */;
+			name = ManningsTests;
+			productReference = 00E356EE1AD99517003FC87E /* ManningsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* reactMobileAppDemo */ = {
+		13B07F861A680F5B00A75B9A /* Mannings */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "reactMobileAppDemo" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Mannings" */;
 			buildPhases = (
 				13F359B18C4C01051CB265D9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -225,9 +224,9 @@
 			);
 			dependencies = (
 			);
-			name = reactMobileAppDemo;
-			productName = reactMobileAppDemo;
-			productReference = 13B07F961A680F5B00A75B9A /* reactMobileAppDemo.app */;
+			name = Mannings;
+			productName = Mannings;
+			productReference = 13B07F961A680F5B00A75B9A /* Mannings.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -247,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "reactMobileAppDemo" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Mannings" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -260,8 +259,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* reactMobileAppDemo */,
-				00E356ED1AD99517003FC87E /* reactMobileAppDemoTests */,
+				13B07F861A680F5B00A75B9A /* Mannings */,
+				00E356ED1AD99517003FC87E /* ManningsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,7 +318,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-reactMobileAppDemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Mannings-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,15 +331,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A6C85440ACA067B4A33FC47 /* [Expo] Configure project */ = {
@@ -360,7 +359,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-reactMobileAppDemo/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Mannings/expo-configure-project.sh\"\n";
 		};
 		69B20B8E0B8B3213ABA5623B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -368,15 +367,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings/Pods-Mannings-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings/Pods-Mannings-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mannings/Pods-Mannings-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8C66A1575A412FE1FA94170E /* [CP] Copy Pods Resources */ = {
@@ -385,15 +384,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings/Pods-Mannings-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings/Pods-Mannings-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo/Pods-reactMobileAppDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mannings/Pods-Mannings-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		92A280E651532D2C660610DB /* [CP] Check Pods Manifest.lock */ = {
@@ -411,7 +410,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-reactMobileAppDemo-reactMobileAppDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Mannings-ManningsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -424,15 +423,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/Pods-reactMobileAppDemo-reactMobileAppDemoTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mannings-ManningsTests/Pods-Mannings-ManningsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D4BB4CCC67CB5A9A2F8FB1D0 /* [Expo] Configure project */ = {
@@ -452,7 +451,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-reactMobileAppDemo-reactMobileAppDemoTests/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Mannings-ManningsTests/expo-configure-project.sh\"\n";
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -480,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* reactMobileAppDemoTests.m in Sources */,
+				00E356F31AD99517003FC87E /* ManningsTests.m in Sources */,
 				DC97CA7B867182F6E256F3E0 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +499,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* reactMobileAppDemo */;
+			target = 13B07F861A680F5B00A75B9A /* Mannings */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -508,14 +507,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD16263DD860B48595F334D5 /* Pods-reactMobileAppDemo-reactMobileAppDemoTests.debug.xcconfig */;
+			baseConfigurationReference = FD16263DD860B48595F334D5 /* Pods-Mannings-ManningsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = reactMobileAppDemoTests/Info.plist;
+				INFOPLIST_FILE = ManningsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,19 +527,19 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactMobileAppDemo.app/reactMobileAppDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mannings.app/Mannings";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E6DACF25319B4F45994DC7D /* Pods-reactMobileAppDemo-reactMobileAppDemoTests.release.xcconfig */;
+			baseConfigurationReference = 6E6DACF25319B4F45994DC7D /* Pods-Mannings-ManningsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = reactMobileAppDemoTests/Info.plist;
+				INFOPLIST_FILE = ManningsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,22 +552,23 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactMobileAppDemo.app/reactMobileAppDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mannings.app/Mannings";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F07E5B505C121A6389388DD /* Pods-reactMobileAppDemo.debug.xcconfig */;
+			baseConfigurationReference = 2F07E5B505C121A6389388DD /* Pods-Mannings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N5KWG268H8;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = reactMobileAppDemo/Info.plist;
+				INFOPLIST_FILE = Mannings/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mannings;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,8 +581,8 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = reactMobileAppDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannings;
+				PRODUCT_NAME = Mannings;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -591,13 +591,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB56CDEAE6436C91CB74436C /* Pods-reactMobileAppDemo.release.xcconfig */;
+			baseConfigurationReference = AB56CDEAE6436C91CB74436C /* Pods-Mannings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N5KWG268H8;
-				INFOPLIST_FILE = reactMobileAppDemo/Info.plist;
+				INFOPLIST_FILE = Mannings/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mannings;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,8 +611,8 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = reactMobileAppDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannings;
+				PRODUCT_NAME = Mannings;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -686,7 +687,10 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -756,7 +760,10 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -766,7 +773,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "reactMobileAppDemoTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ManningsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -775,7 +782,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "reactMobileAppDemo" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Mannings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -784,7 +791,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "reactMobileAppDemo" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Mannings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
