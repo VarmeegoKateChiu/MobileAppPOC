@@ -81,15 +81,15 @@ android {
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-    namespace "com.reactmobileappdemo"
+    namespace "com.mannings"
     defaultConfig {
-        applicationId "com.reactmobileappdemo"
+        applicationId "com.mannings"
         multiDexEnabled true
         minSdkVersion = 21
         targetSdkVersion = 33
         versionCode 1
         versionName "1.0"
-        resValue "string", "build_config_package", "com.reactmobileappdemo"
+        resValue "string", "build_config_package", "com.mannings"
 //        flavorDimensions "env"
     }
     flavorDimensions 'env'

@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Button, ActivityIndicator} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Button, ActivityIndicator, Dimensions} from 'react-native';
 import {WebView, WebViewMessageEvent, WebViewNavigation} from 'react-native-webview';
 import { AntDesign } from '@expo/vector-icons';
 import CookieManager, {Cookie} from '@react-native-cookies/cookies';
@@ -10,12 +10,16 @@ import * as SecureStore from 'expo-secure-store';
 import {useNavigation} from '@react-navigation/native';
 import fetchGetMainSiteApi from "../../Api/ManningsApi/fetchGetMainSiteApi";
 import {WebViewNativeProgressEvent, WebViewProgressEvent} from "react-native-webview/lib/WebViewTypes";
-
+import * as Animatable from 'react-native-animatable';
+import Animated, {FadeInRight, FadeInLeft, SlideInRight} from 'react-native-reanimated';
 
 // interface Cookie {
 //     name: string;
 //     value: string;
 // }
+const windowDimensionsWidth = Dimensions.get('window').width;
+const windowDimensionsHeight = Dimensions.get('window').height;
+
 interface AutoLoginApiJson {
     sessionId: string;
     loginStatus: string;
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    topBar: {
+    bottomBackButtonBar: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
@@ -38,6 +42,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderBottomWidth: 1,
         borderBottomColor: '#E5E5E5',
+        marginTop: 'auto',
     },
     backButton: {
         marginRight: 10,
@@ -236,29 +241,36 @@ const ManningMainWwbView: React.FC = () => {
             {/*End of Modal pop up*/}
             {/*start loading screen*/}
             {isLoading && (
-                <View style={{ position: 'absolute', top: '50%', left: '50%', transform: [{ translateX: -25 }, { translateY: -25 }] }}>
-                    <ActivityIndicator
-                        color="#009688"
-                        size="large"
-                    />
-                </View>
+                    <Animatable.View animation="zoomInRight" style={{ backgroundColor:'#dedede', height:windowDimensionsHeight, width:windowDimensionsWidth}} >
+
+                             <View style={{ position: 'absolute', top: '50%', left: '50%', transform: [{ translateX: -25 }, { translateY: -25 }] }}>
+                                <ActivityIndicator
+                                    color="#009688"
+                                    size="large"
+                                />
+
+                             </View>
+
+                    </Animatable.View>
             )}
             {/*end loading screen*/}
-            <WebView
-                ref={webViewRef}
-                source={{ uri: manningSiteUrl}}
-                style={{ flex: webViewHeight }}
-                onNavigationStateChange={handleNavigation}
-                onLoadEnd={handleWebViewLoadEnd}
-                onMessage={handleWebViewMessage}
-                onLoad={handleWebViewLoad}
-                onLoadProgress={({ nativeEvent }) => handleOnLoadProgress(nativeEvent)}
-                setSupportMultipleWindows={false}
-            />
+                <WebView
+                    ref={webViewRef}
+                    source={{ uri: manningSiteUrl}}
+                    style={{ flex: webViewHeight }}
+                    onNavigationStateChange={handleNavigation}
+                    onLoadEnd={handleWebViewLoadEnd}
+                    onMessage={handleWebViewMessage}
+                    onLoad={handleWebViewLoad}
+                    onLoadProgress={({ nativeEvent }) => handleOnLoadProgress(nativeEvent)}
+                    setSupportMultipleWindows={false}
+                />
             {/*start back button bar*/}
             {/*not manning main site or start with manning main site*/}
-            {(currentUrl != manningSiteDomain || !shouldHideTopBar) && isLoaded && (
-                <View style={styles.topBar}>
+            {/*Remark: if want loading page have back button bar , use (currentUrl != manningSiteDomain || !shouldHideTopBar )*/}
+            {/*if want loading page dont have back button barm use (currentUrl != manningSiteDomain || !shouldHideTopBar ) &&  isLoaded */}
+            {(currentUrl != manningSiteDomain || !shouldHideTopBar ) && (
+                <View style={styles.bottomBackButtonBar}>
                     <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
                         <AntDesign name="arrowleft" style={styles.backButtonIcon} />
                     </TouchableOpacity>

@@ -10,14 +10,14 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "rm &quot;${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}&quot;&#10;echo &quot;.env.staging&quot; &gt; /tmp/envfile&#10;">
+               scriptText = "rm &quot;${CONFIGURATION_BUILD_DIR}/${INFOPLIST_PATH}&quot;&#10;echo &quot;.env.development&quot; &gt; /tmp/envfile&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "reactMobileAppDemo.app"
-                     BlueprintName = "reactMobileAppDemo"
-                     ReferencedContainer = "container:reactMobileAppDemo.xcodeproj">
+                     BuildableName = "Mannings.app"
+                     BlueprintName = "Mannings"
+                     ReferencedContainer = "container:Mannings.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>
@@ -31,9 +31,9 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "reactMobileAppDemo.app"
-                     BlueprintName = "reactMobileAppDemo"
-                     ReferencedContainer = "container:reactMobileAppDemo.xcodeproj">
+                     BuildableName = "Mannings.app"
+                     BlueprintName = "Mannings"
+                     ReferencedContainer = "container:Mannings.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>
@@ -43,9 +43,9 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <AutocreatedTestPlanReference>
             </AutocreatedTestPlanReference>
          </BuildActionEntry>
@@ -58,9 +58,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "reactMobileAppDemo.app"
-               BlueprintName = "reactMobileAppDemo"
-               ReferencedContainer = "container:reactMobileAppDemo.xcodeproj">
+               BuildableName = "Mannings.app"
+               BlueprintName = "Mannings"
+               ReferencedContainer = "container:Mannings.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -87,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactMobileAppDemo.app"
-            BlueprintName = "reactMobileAppDemo"
-            ReferencedContainer = "container:reactMobileAppDemo.xcodeproj">
+            BuildableName = "Mannings.app"
+            BlueprintName = "Mannings"
+            ReferencedContainer = "container:Mannings.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -104,9 +104,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactMobileAppDemo.app"
-            BlueprintName = "reactMobileAppDemo"
-            ReferencedContainer = "container:reactMobileAppDemo.xcodeproj">
+            BuildableName = "Mannings.app"
+            BlueprintName = "Mannings"
+            ReferencedContainer = "container:Mannings.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
