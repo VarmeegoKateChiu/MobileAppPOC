@@ -1,20 +1,24 @@
 import Config from 'react-native-config';
+import UserAgent from 'react-native-user-agent';
 
 const serverDomain = Config.SERVER_DOMAIN ?? '';
 const suffix = Config.MOBILE_LOGIN_SUFFIX ?? '';
 const mobileLoginApi = serverDomain + suffix;
-const fetchPostMobileLoginApi: any = async (userAccount: string, userPassword: string) => {
+const fetchPostMobileLoginApi: any = async (userAccount: string, userPassword: string, rememberMe: boolean) => {
     try {
         console.log("fetchPostMobileLoginApi :: fetching: "+ mobileLoginApi);
+        const userAgent = UserAgent.getUserAgent() +  " /" + (Config.APP_USER_AGENT ?? 'Mannings App');
         const response = await fetch(mobileLoginApi, {
             method: "POST",
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
+                'User-Agent': userAgent
             },
             body: JSON.stringify({
                 j_username: userAccount,
                 j_password: userPassword,
+                rememberMe: rememberMe
             }),
         });
         if (response.status === 200) {
