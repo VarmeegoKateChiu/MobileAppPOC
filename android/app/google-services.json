@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:330302469107:android:09cd8e4fc6261fbe02d886",
+        "mobilesdk_app_id": "1:330302469107:android:0e4a6170dcb9a2d102d886",
         "android_client_info": {
-          "package_name": "com.reactmobileappdemo.development"
+          "package_name": "com.mannings.development"
         }
       },
       "oauth_client": [],
@@ -26,9 +26,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:330302469107:android:09cd8e4fc6261fbe02d886",
+        "mobilesdk_app_id": "1:330302469107:android:0e4a6170dcb9a2d102d886",
         "android_client_info": {
-          "package_name": "com.reactmobileappdemo.staging"
+          "package_name": "com.mannings.staging"
         }
       },
       "oauth_client": [],
@@ -45,9 +45,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:330302469107:android:09cd8e4fc6261fbe02d886",
+        "mobilesdk_app_id": "1:330302469107:android:0e4a6170dcb9a2d102d886",
         "android_client_info": {
-          "package_name": "com.reactmobileappdemo.production"
+          "package_name": "com.mannings.production"
         }
       },
       "oauth_client": [],
