@@ -175,6 +175,13 @@ function MyAccountScreen() {
         navigation.navigate('LoginScreen' as never);
     }
 
+    const navToMyAccountPageScreen = () => {
+        console.log("navigating to MyAccountPageScreen");
+        navigation.navigate('MyAccountPageScreen' as never);
+    }
+
+
+
     useEffect(() => {
 
 
@@ -222,8 +229,13 @@ function MyAccountScreen() {
                     <TouchableOpacity onPress={getPasswordByUserAccount}>
                         <Text style={{backgroundColor: "green"}}>getPasswordButton</Text>
                     </TouchableOpacity>
-
                     <Text>show stored password: {showPassword}</Text>
+
+                    <TouchableOpacity onPress={navToMyAccountPageScreen}>
+                        <Text style={{backgroundColor: "orange"}}>go my account page</Text>
+                    </TouchableOpacity>
+                    <Text>test my account button</Text>
+
                 </View>
             </ScrollView>
             {/*<StoreKeyValueLocalTest></StoreKeyValueLocalTest>*/}
