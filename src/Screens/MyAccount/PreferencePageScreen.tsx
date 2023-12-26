@@ -9,7 +9,7 @@ import * as RNLocalize from 'react-native-localize';
 import i18n from '../../i18n';
 
 
-const PreferencePageScreen = () =>{
+const PreferencePageScreen = ({onClose}) =>{
     const { t } = useTranslation();
     const navigation = useNavigation();
     const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -23,8 +23,7 @@ const PreferencePageScreen = () =>{
     };
 
     useEffect(() => {
-      const locale = RNLocalize.getLocales()[0].languageCode;
-      i18n.changeLanguage(locale);
+
     }, []);
 
     const switchLanguage = (languageCode) => {
@@ -36,10 +35,11 @@ const PreferencePageScreen = () =>{
 
 
             <View style={styles.topBar}>
-                <TouchableOpacity onPress={handleGoBack}>
-                    <Icon name="chevron-left" size={20} color="white" style={{ right: 100 }} />
+                <Text style={styles.topBarText}>Languages</Text>
+                <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+                     <Icon name="times" size={25} color="black" />
                 </TouchableOpacity>
-                <Text style={styles.topBarText}>Preference Screen</Text>
+
             </View>
             <Text>{t('welcome')}</Text>
             <Button  title="Switch to English"
@@ -48,24 +48,39 @@ const PreferencePageScreen = () =>{
             <Button title="切換到中文"
               onPress={() => switchLanguage('zh')}
             />
-            <ScrollView style={styles.container}>
-                <Text style={styles.sectionTitle}>Languages</Text>
-            </ScrollView>
+            <View style={styles.contentContainer}>
+                <ScrollView>
+                    <Text style={styles.languageContent}>You will receive members communications from Mannings in the language that you selected.</Text>
+                </ScrollView>
+            </View>
         </>
     )
 };
-        const styles = StyleSheet.create({
-            topBar: {
-                backgroundColor: '#FF8300',
-                padding: 20,
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center'
-            },
-            topBarText: {
-                color: 'white',
-                fontSize: 18,
-                fontWeight: 'bold',
-            },
-        });
+ const styles = StyleSheet.create({
+    topBar: {
+        padding: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    topBarText: {
+        color: 'black',
+        fontSize: 28,
+        fontWeight: 'bold',
+    },
+    closeButton: {
+        position: 'absolute',
+        top: 10,
+        right: 10,
+        padding: 10,
+        borderRadius: 5,
+    },
+
+    contentContainer: {
+        flex: 1,
+        justifyContent: 'center'
+    },
+    languageContent: {
+        fontSize: 16,
+    }
+ });
 export default PreferencePageScreen;
