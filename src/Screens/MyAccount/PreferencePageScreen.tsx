@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { Text, View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { Button, Text, View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { MultipleChoice } from 'react-native-multiple-choice-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -22,10 +22,14 @@ const PreferencePageScreen = () =>{
         setSelectedLanguages(selectedItems);
     };
 
-  useEffect(() => {
-    const locale = RNLocalize.getLocales()[0].languageCode;
-    i18n.changeLanguage(locale);
-  }, []);
+    useEffect(() => {
+      const locale = RNLocalize.getLocales()[0].languageCode;
+      i18n.changeLanguage(locale);
+    }, []);
+
+    const switchLanguage = (languageCode) => {
+      i18n.changeLanguage(languageCode);
+    };
 
     return(
         <>
@@ -38,6 +42,12 @@ const PreferencePageScreen = () =>{
                 <Text style={styles.topBarText}>Preference Screen</Text>
             </View>
             <Text>{t('welcome')}</Text>
+            <Button  title="Switch to English"
+              onPress={() => switchLanguage('en')}
+            />
+            <Button title="切換到中文"
+              onPress={() => switchLanguage('zh')}
+            />
             <ScrollView style={styles.container}>
                 <Text style={styles.sectionTitle}>Languages</Text>
             </ScrollView>
