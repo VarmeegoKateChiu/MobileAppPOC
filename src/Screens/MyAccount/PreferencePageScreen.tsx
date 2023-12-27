@@ -23,7 +23,8 @@ const PreferencePageScreen = ({onClose}) =>{
     };
 
     useEffect(() => {
-
+        const locale = RNLocalize.getLocales()[0].languageCode;
+        i18n.changeLanguage(locale);
     }, []);
 
     const switchLanguage = (languageCode) => {
