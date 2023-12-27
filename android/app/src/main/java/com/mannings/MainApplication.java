@@ -1,4 +1,4 @@
-package com.reactmobileappdemo;
+package com.mannings;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

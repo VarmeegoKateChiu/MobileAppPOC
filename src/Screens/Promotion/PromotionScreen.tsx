@@ -1,12 +1,14 @@
-import {Text, View} from "react-native";
+import {ActivityIndicator, Text, View} from "react-native";
 import React from "react";
+import {WebView} from "react-native-webview";
 
 function PromotionScreen() {
     return (
 
 
-            <Text>promotion page</Text>
-
+        <View>
+            <Text>Promotion Screen</Text>
+        </View>
     );
 }
 

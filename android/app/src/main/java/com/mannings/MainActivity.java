@@ -1,4 +1,4 @@
-package com.reactmobileappdemo;
+package com.mannings;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

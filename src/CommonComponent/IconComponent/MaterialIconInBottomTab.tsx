@@ -13,7 +13,7 @@ interface MaterialIconInBottomTabProps {
 }
 
 const MaterialIconInBottomTab: React.FC<MaterialIconInBottomTabProps> = ({name, focused}) => {
-    let iconColor = focused ? '#FF8300' : '#FFFFFF';
+    let iconColor = focused ? Color.manningsPrimaryColor : Color.grey;
     return (
         <MaterialIcons name={name} style={{paddingTop: Height.hp1 }} size={Width.wp7} color={iconColor}/>
     )
