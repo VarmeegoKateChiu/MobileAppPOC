@@ -222,6 +222,7 @@ const ManningMainWwbView: React.FC = () => {
     useEffect(() => {
         checkFlag();
         console.log("cur URl: "+currentUrl);
+        console.log("manningSiteDomain: "+ manningSiteDomain);
         console.log("eq?: "+ currentUrl !== 'https://www.mannings.com.hk/')
     }, [isAnonymousUserState]);
     return (
@@ -270,6 +271,7 @@ const ManningMainWwbView: React.FC = () => {
                     onLoad={handleWebViewLoad}
                     onLoadProgress={({ nativeEvent }) => handleOnLoadProgress(nativeEvent)}
                     setSupportMultipleWindows={false}
+                    sharedCookiesEnabled={true}
                 />
             {/*start back button bar*/}
             {/*not manning main site or start with manning main site*/}
