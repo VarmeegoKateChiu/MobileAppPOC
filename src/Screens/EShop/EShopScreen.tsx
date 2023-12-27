@@ -81,7 +81,13 @@ const ManningMainWwbView: React.FC = () => {
         }
     };
 
-    const shouldHideTopBar = currentUrl.startsWith(manningSiteDomain);
+
+
+    const isCurrentUrlStartWithManningSiteDomain = currentUrl.startsWith(manningSiteDomain);
+
+    const isCurrentUrlEqManningMainSite = currentUrl == manningSiteDomain || currentUrl == manningSiteDomain + manningSiteSuffix;
+
+    const shouldHideTopBar = !isCurrentUrlEqManningMainSite || !isCurrentUrlStartWithManningSiteDomain;
 
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
@@ -269,7 +275,7 @@ const ManningMainWwbView: React.FC = () => {
             {/*not manning main site or start with manning main site*/}
             {/*Remark: if want loading page have back button bar , use (currentUrl != manningSiteDomain || !shouldHideTopBar )*/}
             {/*if want loading page dont have back button barm use (currentUrl != manningSiteDomain || !shouldHideTopBar ) &&  isLoaded */}
-            {(currentUrl != manningSiteDomain || !shouldHideTopBar ) && (
+            {(shouldHideTopBar) && (
                 <View style={styles.bottomBackButtonBar}>
                     <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
                         <AntDesign name="arrowleft" style={styles.backButtonIcon} />
