@@ -8,7 +8,6 @@ const suffix = Config.MOBILE_LOGIN_SUFFIX ?? '';
 const mobileLoginApi = serverDomain + suffix;
 
 const fetchPostMobileLoginApi: any = async (userAccount: string, userPassword: string, rememberMe: boolean) => {
-    const [userDisplayName,setUserDisplayName] = useContext(UserContext);
     try {
         console.log("fetchPostMobileLoginApi :: fetching: "+ mobileLoginApi);
         const userAgent = UserAgent.getUserAgent() +  " /" + (Config.APP_USER_AGENT ?? 'Mannings App');
@@ -32,7 +31,6 @@ const fetchPostMobileLoginApi: any = async (userAccount: string, userPassword: s
 
         const data: string = await response.json();
         console.log("Login successful" + data.userDisplayName);
-        setUserDisplayName(data.userDisplayName);
 
         return respJson;
 
